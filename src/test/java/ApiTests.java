@@ -23,7 +23,7 @@ public class ApiTests {
                 .get(URl+"api/v1/employees")
                 .then().log().all()
                 .extract().body().jsonPath().getList("data", Sportsman.class);
-        Assertions.assertTrue(sportsmanList.size()==24);
+        Assertions.assertEquals(sportsmanList.size() ,24);
     }
 
 
@@ -43,7 +43,7 @@ public class ApiTests {
     public void createUserTest() {
         //create new User
         String age = "32", salary = "2311", name = "tomas";
-        String body = String.format("{name:%s,salary:$s", "age:%s}", name, salary, age);
+        String body = String.format("{name:%s","salary:%s","age:%s}", name, salary, age);
 
         Response response = given().baseUri(URl)
                 .contentType(ContentType.JSON)
@@ -53,5 +53,16 @@ public class ApiTests {
         Assertions.assertEquals(response.getStatusCode(),200);
         Assertions.assertNotNull(responseBody);
         Assertions.assertTrue(responseBody.contains("Successfully! Record has been added."));
+    }
+
+    @Test
+    public void deleteUser(){
+        //delete user
+        Response response = given().baseUri(URl)
+                .when()
+                .request(Method.DELETE,"api/v1/delete/-");
+        Assertions.assertEquals(response.statusCode() , 200);
+        Assertions.assertTrue(response.body().asString().contains("Successfully! Record has been deleted"));
+
     }
 }
