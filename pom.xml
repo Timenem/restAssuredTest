@@ -11,6 +11,10 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <project.lombook.version>1.18.22</project.lombook.version>
+        <rest.assuresd.version>4.4.0</rest.assuresd.version>
+        <junit.jupiter.version>5.8.2</junit.jupiter.version>
+        <jackson.xml.version>2.9.5</jackson.xml.version>
     </properties>
 
 
@@ -18,28 +22,24 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.22</version>
+            <version>${project.lombook.version}</version>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <version>4.4.0</version>
+            <version>${rest.assuresd.version}</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.8.2</version>
+            <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.9.5</version>
+            <version>${jackson.xml.version}</version>
         </dependency>
-
-
-
     </dependencies>
 
 </project>
