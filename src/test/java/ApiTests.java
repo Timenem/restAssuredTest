@@ -3,12 +3,10 @@ import io.restassured.http.Method;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import pojo.CreateUser;
 import pojo.Sportsman;
 
 import java.util.List;
 
-import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
 public class ApiTests {
