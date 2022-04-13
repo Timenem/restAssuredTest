@@ -65,7 +65,8 @@ public class UsersListTest {
                 .get("users")
                 .then().log().all()
                 .body("$", Matchers.everyItem(Matchers.hasEntry("gender", "female")))
-                .body("$", Matchers.everyItem(Matchers.hasEntry("status", "active")));
+                .body("$", Matchers.everyItem(Matchers.hasEntry("status", "active")))
+                .body("[0].id", Matchers.notNullValue());
 
     }
 
@@ -76,6 +77,6 @@ public class UsersListTest {
                 .when()
                 .get(COMMENTS_URL)
                 .then().log().all()
-                .body("$", Matchers.hasEntry("id",2));
+                .body("id", Matchers.equalTo(2));
     }
 }
