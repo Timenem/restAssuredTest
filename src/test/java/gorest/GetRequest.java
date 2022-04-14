@@ -7,9 +7,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Matcher;
 
-public class UsersListTest {
+public class GetRequest {
     String URL = "https://gorest.co.in/public/v2";
 
     // Endpoints
